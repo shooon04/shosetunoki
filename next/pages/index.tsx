@@ -1,28 +1,23 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import { Layout, PageList, TagList } from "../lib/amdxg-components";
+import pages from "../gen/pages.json";
+import ssgConfig from "../amdxg.config";
+import tagmap from "../gen/tagmap.json";
 
-const Home: NextPage = () => {
+export const config = { amp: true };
+
+export default () => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Webマガジン　小説の木</title>
-        <meta name="description" content="準備中" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="robots" content="noindex" />
+        <title>{ssgConfig.siteName}</title>
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          <img src="/logo.png" alt="" />
-          <span>小説の木</span>
-        </h1>
-        <p>準備中</p>
-        
-      </main>
-    </div>
-  )
-}
-
-export default Home
+      <Layout config={ssgConfig}>
+        <h2>Articles</h2>
+        <PageList pages={pages as any} />
+        <h2>Tags</h2>
+        <TagList tags={Object.keys(tagmap)} />
+      </Layout>
+    </>
+  );
+};

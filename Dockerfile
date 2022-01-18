@@ -1,2 +1,2 @@
-FROM node:14.17.0
+FROM node:17.3.0
 WORKDIR /usr/src/app
