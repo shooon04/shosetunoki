@@ -6,11 +6,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
 function SocialShare(props) {
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { style: { paddingTop: 15 } },
+        react_1.default.createElement("div", { className: "social_list" },
             props.twitter && react_1.default.createElement(TwitterShare, null),
-            props.hatena && react_1.default.createElement(HatenaBookmarkShare, null),
             props.facebook && react_1.default.createElement(FacebookShare, null),
-            props.line && react_1.default.createElement(LineShare, null))));
+            props.line && react_1.default.createElement(LineShare, null),
+            props.hatena && react_1.default.createElement(HatenaBookmarkShare, null),
+            props.WebShare && react_1.default.createElement(WebShareAPI, null),
+            )));
 }
 exports.SocialShare = SocialShare;
 function TwitterShare() {
@@ -30,5 +32,9 @@ function HatenaBookmarkShare() {
     // @ts-ignore
     // prettier-ignore
     // <amp-social-share type="hatena_bookmark" layout="container" data-share-endpoint="http://b.hatena.ne.jp/entry/CANONICAL_URL">B!</amp-social-share>
-    react_1.default.createElement("amp-social-share", { type: "hatena_bookmark", "data-share-endpoint": "http://b.hatena.ne.jp/entry/CANONICAL_URL" }));
+    react_1.default.createElement("amp-social-share", { type: "hatena_bookmark", "data-share-endpoint": "http://b.hatena.ne.jp/entry/CANONICAL_URL" }, "B!"));
+}
+function WebShareAPI() {
+    // @ts-ignore
+    return react_1.default.createElement("amp-social-share", { type: "system" });
 }

@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
     const sheet = new ServerStyleSheet();
     try {
-      const page = ctx.renderPage((App) => (props) =>
+      const page = ctx.renderPage((App: any) => (props: any) =>
         sheet.collectStyles(<App {...props} />)
       );
       const initialProps: any = await Document.getInitialProps(ctx);
@@ -40,12 +40,25 @@ export default class MyDocument extends Document {
             title={ssgConfig.siteName}
             href="/rss.xml"
           />
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" />
           {/* <link
             rel="alternate"
             type="application/rss+xml"
             title={ssgConfig.siteName}
             href="sitemap.xml"
           /> */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${ssgConfig.gtag}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </Head>
         <body>
           <Main />

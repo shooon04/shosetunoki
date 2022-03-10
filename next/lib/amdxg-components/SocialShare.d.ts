@@ -4,4 +4,5 @@ export declare function SocialShare(props: {
     facebook?: boolean;
     line?: boolean;
     hatena?: boolean;
+    WebShare?: boolean;
 }): JSX.Element;

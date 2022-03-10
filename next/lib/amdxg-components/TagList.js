@@ -4,9 +4,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
+const Link_1 = require("./Link");
 function TagList(props) {
-    return (react_1.default.createElement(react_1.default.Fragment, null, props.tags.map((tag, index) => {
-        return (react_1.default.createElement("a", { className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2", href: "/tags/" + tag, key: index }, tag));
-    })));
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("nav", null,
+            react_1.default.createElement("ul", { className: "tag_list" },
+                props.tags.map((tag, index) => {
+                    return (
+                        react_1.default.createElement("li", null,
+                            react_1.default.createElement(Link_1.Link, { className: "tag", href: "/media/tags/" + tag, key: index }, tag)
+                        )
+                    );
+                }
+            ),
+        ),
+    )));
 }
 exports.TagList = TagList;

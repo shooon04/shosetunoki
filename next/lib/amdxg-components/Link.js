@@ -4,7 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
+const nextLink_1 = __importDefault(require("next/link"));
 function Link(props) {
-    return (react_1.default.createElement("a", { className: "underline text-blue-700 hover:no-underline", href: props.href }, props.children));
+    return (
+        react_1.default.createElement(nextLink_1.default, { href: props.href },
+            react_1.default.createElement("a", { href: props.href }, props.children)
+        )
+    );
 }
 exports.Link = Link;

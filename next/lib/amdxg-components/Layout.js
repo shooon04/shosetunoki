@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
 const styled_components_1 = __importDefault(require("styled-components"));
-const GoogleAnalytics_1 = require("./GoogleAnalytics");
+const Link_1 = require("./Link");
 function Layout(props) {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(DefaultPlugins, { config: props.config }),
@@ -16,31 +16,38 @@ function Layout(props) {
 exports.Layout = Layout;
 function DefaultPlugins(props) {
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(AmpInstallServiceWorker, null),
-        props.config.gtag && react_1.default.createElement(GoogleAnalytics_1.GoogleAnalytics, { gtag: props.config.gtag })));
+        react_1.default.createElement(AmpInstallServiceWorker, null)));
 }
 exports.DefaultPlugins = DefaultPlugins;
 function Main(props) {
-    return (react_1.default.createElement(MainContainer, null,
+    return (react_1.default.createElement("div", { className: "main_wrap" },
         react_1.default.createElement(MainContent, null,
             react_1.default.createElement("main", { className: "article_page" }, props.children))));
 }
 exports.Main = Main;
 function Header(props) {
-    return (react_1.default.createElement("nav", { className: "flex items-center justify-between flex-wrap bg-gray-800 p-3" },
-        react_1.default.createElement("div", { className: "flex items-center flex-shrink-0 text-white mr-6" },
-            react_1.default.createElement("a", { href: "/", className: "font-semibold text-xl tracking-tight text-gray-200" },
-                "\u26A1 ",
-                props.config.siteName))));
+    return (
+        react_1.default.createElement("header", { className: "main_header" },
+            react_1.default.createElement("nav", null,
+                react_1.default.createElement("div", null,
+                    react_1.default.createElement(Link_1.Link, { href: "/" },
+                        react_1.default.createElement("a", { href: "/", className: "header_logo" },
+                            react_1.default.createElement("img", {src: "/logo.png", width: "35", height: "35"}),
+                            react_1.default.createElement("span", null,
+                                props.config.siteName
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    );
 }
 exports.Header = Header;
 function Footer() {
-    return (react_1.default.createElement("footer", { className: "flex items-center justify-between flex-wrap bg-gray-800 p-6 text-gray-200" },
+    return (react_1.default.createElement("footer", { className: "main_footer" },
         react_1.default.createElement("p", null,
-            "created by\u00A0",
-            react_1.default.createElement("a", { href: "https://github.com/mizchi/amdx", className: "underline text-blue-400 hover:no-underline" }, "amdxg"),
-            "\u00A0|\u00A0",
-            react_1.default.createElement("span", null, "This site uses Google Analytics."))));
+            react_1.default.createElement("span", { className: "copy"}, "© Copyright 2022 小説の木 All rights reserved."))));
 }
 exports.Footer = Footer;
 function AmpInstallServiceWorker(props) {
@@ -55,14 +62,6 @@ function AmpInstallServiceWorker(props) {
     react_1.default.createElement("amp-install-serviceworker", Object.assign({}, newProps)));
 }
 exports.AmpInstallServiceWorker = AmpInstallServiceWorker;
-const MainContainer = styled_components_1.default.div `
-  width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 15px;
-  max-width: 100%;
-  background: #f7f6f5;
-`;
 const MainContent = styled_components_1.default.div `
   margin: 0 auto;
   max-width: 1140px;

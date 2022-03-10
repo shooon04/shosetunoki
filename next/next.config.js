@@ -16,7 +16,7 @@ module.exports = {
         {
           loader: "amdx-loader",
           options: {
-            amp: true,
+            amp: false,
           },
         },
       ],

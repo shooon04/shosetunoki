@@ -9,6 +9,7 @@ export declare type AmdxgConfig = {
         facebook?: boolean;
         line?: boolean;
         hatena?: boolean;
+        WebShare?: boolean;
     };
 };
 export declare type Page = {
