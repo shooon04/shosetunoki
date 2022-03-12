@@ -24,7 +24,7 @@ exports.ToC = ToC;
 
 function subToc(props) {
     let breakFlg = 0;
-    if(props.children.toc[props.children.index + 1].depth == 2){
+    if(props.children.toc[props.children.index + 1] && props.children.toc[props.children.index + 1].depth == 2){
         return(react_1.default.createElement(react_1.default.Fragment, null))
     };
     return(
