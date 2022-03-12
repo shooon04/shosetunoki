@@ -7,7 +7,6 @@ import tagmap from "../../../gen/tagmap.json";
 export const config = { amp: false };
 
 export function getStaticPaths() {
-  // eslint-disable-next-line react/display-name
   const paths = Object.keys(tagmap).map((tag) => {
     return `/media/tags/${tag}`;
   });
@@ -22,7 +21,6 @@ type Props = {
   pages: Array<{ title: string; slug: string }>;
 };
 
-// eslint-disable-next-line react/display-name
 export const getStaticProps: GetStaticProps = async (props) => {
   const tag = props.params?.tag;
   

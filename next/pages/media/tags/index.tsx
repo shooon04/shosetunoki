@@ -13,7 +13,6 @@ export default () => {
       </Head>
       <Layout config={ssgConfig}>
         <div className="tag_box">
-        // eslint-disable-next-line react/display-name
           <TagList tags={Object.keys(tagmap)} />
         </div>
       </Layout>
