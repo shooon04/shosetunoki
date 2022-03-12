@@ -27,7 +27,8 @@ export const getStaticProps: GetStaticProps = async (props) => {
   return {
     props: {
       tagName: tag,
-      pages: tagmap[tag as any],
+      // @ts-ignore
+      pages: tagmap[tag as {[s:string]: { title: string; slug: string }[]}],
     } as Props,
   };
 };
