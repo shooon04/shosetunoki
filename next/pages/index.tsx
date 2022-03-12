@@ -16,6 +16,7 @@ export default () => {
       <Layout config={ssgConfig}>
         <div className="pb80 sp-pb60">
           <h2 className="post_list_title">タグ一覧</h2>
+          // eslint-disable-next-line react/display-name
           <TagList tags={Object.keys(tagmap)} />
         </div>
         <div>

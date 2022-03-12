@@ -53,6 +53,7 @@ export const getStaticProps: GetStaticProps = async (props) => {
   const { default: writer } = await import(`../../writer/${writerId}.json`);
   
   let related:any = [];
+  // eslint-disable-next-line react/display-name
   pages.forEach(page => {
     frontmatter.related.forEach((element: string) => {
       if(page.slug === element) {
