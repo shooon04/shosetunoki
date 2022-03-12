@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps = async (props) => {
   
   let related:any = [];
   pages.forEach(page => {
-    frontmatter.related.forEach(element => {
+    frontmatter.related.forEach((element: string) => {
       if(page.slug === element) {
         related.push({slug: page.slug, title: page.title, created: page.created})
       }
