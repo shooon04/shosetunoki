@@ -8,7 +8,6 @@ import Head from "next/head";
 type Props = {
   slug: string;
   toc: Array<any>;
-  history: Array<any>;
   writer: {
     name: string;
     avatar: string;
@@ -52,7 +51,6 @@ export const getStaticProps: GetStaticProps = async (props) => {
   );
   const writerId: string = frontmatter.writer;
   const { default: writer } = await import(`../../writer/${writerId}.json`);
-  const { default: history } = await import(`../../gen/${slug}.history.json`);
   
   let related:any = [];
   pages.forEach(page => {
@@ -66,7 +64,6 @@ export const getStaticProps: GetStaticProps = async (props) => {
     props: {
       slug,
       toc,
-      history,
       tags: frontmatter.tags || [],
       related,
       writer,
@@ -100,7 +97,6 @@ export default (props: Props) => (
     <Layout config={ssgConfig}>
       <Article
         ssgConfig={ssgConfig}
-        history={props.history}
         slug={props.slug}
         toc={props.toc}
         title={props.frontmatter.title}

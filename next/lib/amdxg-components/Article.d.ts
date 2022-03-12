@@ -18,12 +18,6 @@ export declare function Article(props: {
         twitter: string;
         text: string;
     };
-    history?: Array<{
-        hash: string;
-        author: string;
-        message: string;
-        date: string;
-    }>;
     tags?: string[];
     related: {
         slug: string;
