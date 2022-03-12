@@ -33,7 +33,7 @@ type Props = {
   html: string;
 };
 
-export const config = { amp: false };
+export const config = { amp: true };
 
 export function getStaticPaths() {
   const paths = pages.map((page) => {
