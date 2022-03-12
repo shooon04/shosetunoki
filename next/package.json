@@ -10,6 +10,8 @@
   "dependencies": {
     "@mdx-js/loader": "^2.0.0",
     "@next/mdx": "^12.1.0",
+    "@types/prop-types": "^15.7.4",
+    "@types/scheduler": "^0.16.2",
     "amdx": "^0.9.0",
     "amdx-loader": "^0.9.0",
     "amdx-runner": "^0.9.0",
