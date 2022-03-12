@@ -19,7 +19,7 @@ function Article(props) {
                             react_1.default.createElement("h1", null, props.title),
                             react_1.default.createElement("div", null,
                                 props.tags && react_1.default.createElement(TagList_1.TagList, { tags: props.tags }),
-                                react_1.default.createElement("time", { className: "article_time", itemprop: "dateModified", datetime: props.createdAt },
+                                react_1.default.createElement("time", { className: "article_time" },
                                     react_1.default.createElement("i", {className: "fa-regular fa-calendar"}, ""),
                                     props.createdAt
                                 )
