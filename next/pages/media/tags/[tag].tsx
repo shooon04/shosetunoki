@@ -1,4 +1,5 @@
 // @ts-nocheck
+/* eslint-disable */
 import Head from "next/head";
 import { Layout, TagPage } from "../../../lib/amdxg-components";
 import { GetStaticProps } from "next";
