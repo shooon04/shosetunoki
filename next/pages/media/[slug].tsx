@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GetStaticProps } from "next";
 import ReactDOMServer from "react-dom/server";
 import pages from "../../gen/pages.json";

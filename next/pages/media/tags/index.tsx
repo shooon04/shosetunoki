@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Head from "next/head";
 import { Layout, TagList } from "../../../lib/amdxg-components";
 import ssgConfig from "../../../amdxg.config";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Head from "next/head";
 import { Layout, PageList, TagList } from "../lib/amdxg-components";
 import pages from "../gen/pages.json";
