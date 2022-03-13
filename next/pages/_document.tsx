@@ -49,6 +49,7 @@ export default class MyDocument extends Document {
             href="sitemap.xml"
           /> */}
           <meta name="google-site-verification" content="THcpqo-er20sazJAgi8Zvyr3PdzRHOTRc0GuMyEeQUM" />
+          <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
           <GoogleAnalytics gtag={ssgConfig.gtag} />
         </Head>
         <body>
