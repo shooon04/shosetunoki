@@ -5,7 +5,7 @@ module.exports = {
   author: "小説の木",
   authorLink: "https://twitter.com/shosetunoki",
   lang: "ja",
-  gtag: "G-Y5CPL4B4T3",
+  gtag: "UA-222754318-1",
   repository: "shooon04/shosetunoki",
   socialShare: {
     twitter: false,
