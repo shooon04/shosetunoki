@@ -3,6 +3,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import css from "!!raw-loader!../styles/globals.css";
 import { ServerStyleSheet } from "styled-components";
 import ssgConfig from "../amdxg.config";
+import { GoogleAnalytics } from "../lib/amdxg-components";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
@@ -47,25 +48,9 @@ export default class MyDocument extends Document {
             title={ssgConfig.siteName}
             href="sitemap.xml"
           /> */}
+          <GoogleAnalytics gtag={ssgConfig.gtag} />
         </Head>
         <body>
-          {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${ssgConfig.gtag}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${ssgConfig.gtag}', {
-              page_path: window.location.pathname,
-            });
-          `,
-            }}
-          />
           <Main />
           <NextScript />
         </body>
