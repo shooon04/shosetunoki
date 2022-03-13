@@ -2,7 +2,7 @@
   "name": "next",
   "private": true,
   "scripts": {
-    "build": "amdxg build && next build && next export && amdxg postbuild:rss && node script/generate-ogp.mjs",
+    "build": "amdxg build && next build && next export && amdxg postbuild:rss",
     "dev": "amdxg build && next",
     "start": "next start",
     "lint": "next lint"
