@@ -47,6 +47,7 @@ export default class MyDocument extends Document {
             title={ssgConfig.siteName}
             href="sitemap.xml"
           /> */}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDL4F2M5SC"></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
