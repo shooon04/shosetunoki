@@ -42,6 +42,23 @@ export default (props: Props) => {
         <title>
           {props.tagName} - {ssgConfig.siteName}
         </title>
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${ssgConfig.gtag}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${ssgConfig.gtag}', {
+            page_path: window.location.pathname,
+          });
+        `,
+          }}
+        />
       </Head>
       <Layout config={ssgConfig}>
         <TagPage tagName={props.tagName} pages={props.pages} />
