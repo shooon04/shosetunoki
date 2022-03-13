@@ -87,7 +87,7 @@ export default (props: Props) => (
         property="og:description"
         content={props.frontmatter.description ?? ""}
       />
-      <meta property="og:url" content={ssgConfig.host + props.slug} />
+      <meta property="og:url" content={ssgConfig.host + "media" + props.slug} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         property="og:image"
