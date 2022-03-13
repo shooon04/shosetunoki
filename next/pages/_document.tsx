@@ -47,7 +47,13 @@ export default class MyDocument extends Document {
             title={ssgConfig.siteName}
             href="sitemap.xml"
           /> */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDL4F2M5SC"></script>
+        </Head>
+        <body>
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${ssgConfig.gtag}`}
+          />
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -60,8 +66,6 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-        </Head>
-        <body>
           <Main />
           <NextScript />
         </body>
