@@ -48,6 +48,7 @@ export default class MyDocument extends Document {
             title={ssgConfig.siteName}
             href="sitemap.xml"
           /> */}
+          <meta name="google-site-verification" content="THcpqo-er20sazJAgi8Zvyr3PdzRHOTRc0GuMyEeQUM" />
           <GoogleAnalytics gtag={ssgConfig.gtag} />
         </Head>
         <body>
