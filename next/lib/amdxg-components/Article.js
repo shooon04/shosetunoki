@@ -9,6 +9,7 @@ const Writer_1 = require("./Writer");
 const SocialShare_1 = require("./SocialShare");
 const TagList_1 = require("./TagList");
 const PageList_1 = require("./PageList");
+const format_1 = __importDefault(require("date-fns/format"));
 function Article(props) {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: "article_wrap" },
@@ -19,9 +20,9 @@ function Article(props) {
                             react_1.default.createElement("h1", null, props.title),
                             react_1.default.createElement("div", null,
                                 props.tags && react_1.default.createElement(TagList_1.TagList, { tags: props.tags }),
-                                react_1.default.createElement("time", { className: "article_time", itemprop: "dateModified", datetime: props.createdAt },
+                                react_1.default.createElement("time", { className: "article_time", itemprop: "dateModified", datetime: format_1.default(new Date(props.createdAt * 1000), "yyyy-MM-dd") },
                                     react_1.default.createElement("i", {className: "fa-regular fa-calendar"}, ""),
-                                    props.createdAt
+                                    format_1.default(new Date(props.createdAt * 1000), "yyyy/MM/dd")
                                 )
                             )
                         ),
