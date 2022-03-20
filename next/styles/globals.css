@@ -376,6 +376,7 @@ th {
 .article_box a {
   color: #3c96cf;
   text-decoration: underline;
+  word-break: break-all;
 }
 
 .article_box a:hover {
